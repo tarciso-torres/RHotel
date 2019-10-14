@@ -33,31 +33,31 @@ public class Staff implements Serializable {
 	@Column(name = "sStaffID")
 	private Long id;
 	
-	@Column(name = "gFirstName")
+	@Column(name = "sFirstName")
 	private String firstName;
-	@Column(name = "gLastName")
+	@Column(name = "sLastName")
 	private String lastName;
-	@Column(name = "positionID")
+	@Column(name = "sPositionID")
 	private String positionId;
-	@Column(name = "gAddress")
+	@Column(name = "sAddress")
 	private String address;
-	@Column(name = "gAddress2")
+	@Column(name = "sAddress2")
 	private String addressTwo;
-	@Column(name = "gCity")
+	@Column(name = "sCity")
 	private String city;
-	@Column(name = "gState")
+	@Column(name = "sState")
 	private String state;
-	@Column(name = "gZipCode")
+	@Column(name = "sZipCode")
 	private String zipCode;
-	@Column(name = "gCounty")
+	@Column(name = "sCounty")
 	private String county;
-	@Column(name = "gHomePhoneNumber")
+	@Column(name = "sHomePhoneNumber")
 	private String homePhoneNumber;
-	@Column(name = "gCellularNumber")
+	@Column(name = "sCellularNumber")
 	private String cellularNumber;
-	@Column(name = "gGender")
+	@Column(name = "sGender")
 	private String gender;
-	@Column(name = "gEmailAddress")
+	@Column(name = "sEmailAddress")
 	private String email;
 
 }
