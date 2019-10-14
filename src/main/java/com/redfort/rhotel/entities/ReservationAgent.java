@@ -24,7 +24,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_reservationAgent")
-public class ReservationAgents implements Serializable {
+public class ReservationAgent implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
