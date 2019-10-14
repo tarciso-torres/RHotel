@@ -9,7 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -24,20 +23,22 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tb_guest")
-public class Guest implements Serializable {
+@Table(name = "tb_staff")
+public class Staff implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "gGuestID")
+	@Column(name = "sStaffID")
 	private Long id;
-
+	
 	@Column(name = "gFirstName")
 	private String firstName;
 	@Column(name = "gLastName")
 	private String lastName;
+	@Column(name = "positionID")
+	private String positionId;
 	@Column(name = "gAddress")
 	private String address;
 	@Column(name = "gAddress2")
