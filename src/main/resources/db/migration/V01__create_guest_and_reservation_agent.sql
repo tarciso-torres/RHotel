@@ -24,7 +24,7 @@ CREATE TABLE tb_reservation_agent(
     raCity VARCHAR(35),
     raState VARCHAR(35),
     raZipCode VARCHAR(35),
-    raCountry VARCHAR(35),
+    raCounty VARCHAR(35),
     raHomePhoneNumber VARCHAR(15),
     raCellularNumber VARCHAR(15),
     raEmailAddress VARCHAR(35),
