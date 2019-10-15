@@ -15,7 +15,7 @@ CREATE TABLE tb_guest(
 );
 
 
-CREATE TABLE tb_reservationAgent(
+CREATE TABLE tb_reservation_agent(
     raReservationAgentID serial PRIMARY KEY,
     raFirstName VARCHAR(30),
     raLastName VARCHAR(30),
