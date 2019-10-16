@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -37,8 +39,11 @@ public class Staff implements Serializable {
 	private String firstName;
 	@Column(name = "sLastName")
 	private String lastName;
-	@Column(name = "sPositionID")
-	private String positionId;
+	
+	@ManyToOne
+	@JoinColumn(name = "sPositionID")
+	
+	private Position position;
 	@Column(name = "sAddress")
 	private String address;
 	@Column(name = "sAddress2")

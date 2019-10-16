@@ -26,7 +26,7 @@ public class GuestResource {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity findById(@PathVariable Long id) {
+	public ResponseEntity<Guest> findById(@PathVariable Long id) {
 		Guest guest = service.findById(id);
 		return ResponseEntity.ok().body(guest);
 	}

@@ -1,11 +1,17 @@
 package com.redfort.rhotel.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -15,7 +21,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Getter
-@Setter
 @ToString
 @EqualsAndHashCode(of = { "id" })
 @NoArgsConstructor
@@ -30,10 +35,14 @@ public class Position {
 	private Long id;
 	
 	@Column(name = "pPosition")
-	private String position;
+	@Setter private String position;
 	@Column(name = "pSortOrder")
-	private String sortOrder;
+	@Setter private String sortOrder;
 	@Column(name = "pActive")
-	private Boolean active;
+	@Setter private Boolean active;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "position")
+	private List<Staff> staffs = new ArrayList<>();
 
 }
