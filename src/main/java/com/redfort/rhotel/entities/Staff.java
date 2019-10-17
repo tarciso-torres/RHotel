@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -23,39 +25,44 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "tb_reservation_agent")
-public class ReservationAgent implements Serializable {
+@Table(name = "tb_staff")
+public class Staff implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "raReservationAgentID")
+	@Column(name = "sStaffID")
 	private Long id;
-
-	@Column(name = "raFirstName")
+	
+	@Column(name = "sFirstName")
 	private String firstName;
-	@Column(name = "raLastName")
+	@Column(name = "sLastName")
 	private String lastName;
-	@Column(name = "raAddress")
+	
+	@ManyToOne
+	@JoinColumn(name = "sPositionID")
+	
+	private Position position;
+	@Column(name = "sAddress")
 	private String address;
-	@Column(name = "raAddress2")
+	@Column(name = "sAddress2")
 	private String addressTwo;
-	@Column(name = "raCity")
+	@Column(name = "sCity")
 	private String city;
-	@Column(name = "raState")
+	@Column(name = "sState")
 	private String state;
-	@Column(name = "raZipCode")
+	@Column(name = "sZipCode")
 	private String zipCode;
-	@Column(name = "raCounty")
+	@Column(name = "sCounty")
 	private String county;
-	@Column(name = "raHomePhoneNumber")
+	@Column(name = "sHomePhoneNumber")
 	private String homePhoneNumber;
-	@Column(name = "raCellularNumber")
+	@Column(name = "sCellularNumber")
 	private String cellularNumber;
-	@Column(name = "raGender")
+	@Column(name = "sGender")
 	private String gender;
-	@Column(name = "raEmailAddress")
+	@Column(name = "sEmailAddress")
 	private String email;
 
 }

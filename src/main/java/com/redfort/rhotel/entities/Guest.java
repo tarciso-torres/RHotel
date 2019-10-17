@@ -31,7 +31,6 @@ public class Guest implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "gGuestID")
-	@Setter
 	private Long id;
 
 	@Column(name = "gFirstName")

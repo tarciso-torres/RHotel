@@ -9,26 +9,26 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.redfort.rhotel.entities.Guest;
-import com.redfort.rhotel.services.GuestService;
+import com.redfort.rhotel.entities.Staff;
+import com.redfort.rhotel.services.StaffService;
 
 @RestController
-@RequestMapping(value = "/guests")
-public class GuestResource {
+@RequestMapping(value = "/staffs")
+public class StaffResource {
 	
 	@Autowired
-	private GuestService service;
+	private StaffService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Guest>> findAll(){
-		List<Guest> guests = service.findAll();
-		return ResponseEntity.ok().body(guests);
+	public ResponseEntity<List<Staff>> findAll(){
+		List<Staff> staffs = service.findAll();
+		return ResponseEntity.ok().body(staffs);
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Guest> findById(@PathVariable Long id) {
-		Guest guest = service.findById(id);
-		return ResponseEntity.ok().body(guest);
+	public ResponseEntity<Staff> findById(@PathVariable Long id) {
+		Staff staff = service.findById(id);
+		return ResponseEntity.ok().body(staff);
 	}
 
 }
