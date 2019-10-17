@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -33,10 +35,14 @@ public class Guest implements Serializable {
 	@Column(name = "gGuestID")
 	private Long id;
 
+	@NotBlank(message = "guest-1")
 	@Column(name = "gFirstName")
 	private String firstName;
+	
+	@NotBlank(message = "guest-2")
 	@Column(name = "gLastName")
 	private String lastName;
+	
 	@Column(name = "gAddress")
 	private String address;
 	@Column(name = "gAddress2")
@@ -55,6 +61,8 @@ public class Guest implements Serializable {
 	private String cellularNumber;
 	@Column(name = "gGender")
 	private String gender;
+	
+	@NotBlank(message = "guest-3") @Email(message = "guest-4")
 	@Column(name = "gEmailAddress")
 	private String email;
 
