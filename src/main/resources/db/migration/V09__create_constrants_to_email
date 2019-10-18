@@ -1,1 +1,3 @@
 ALTER TABLE tb_guest ADD CONSTRAINT unique_key_email UNIQUE (gemailaddress);
+ALTER TABLE tb_reservation_agent ADD CONSTRAINT unique_key_email UNIQUE (raemailaddress);
+ALTER TABLE tb_staff ADD CONSTRAINT unique_key_email UNIQUE (semailaddress);
