@@ -23,5 +23,10 @@ public class StaffService {
 		Optional<Staff> obj =  repository.findById(id);
 		return obj.get();
 	}
+	
+	public Staff save(Staff entity) {
+		Staff obj = repository.save(entity);
+		return obj;
+	}
 
 }

@@ -32,38 +32,40 @@ public class Guest implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "gGuestID")
+	@Column(name = "gguestiD")
 	private Long id;
 
 	@NotBlank(message = "guest-1")
-	@Column(name = "gFirstName")
+	@Column(name = "gfirstname")
 	private String firstName;
 	
 	@NotBlank(message = "guest-2")
-	@Column(name = "gLastName")
+	@Column(name = "glastname")
 	private String lastName;
 	
-	@Column(name = "gAddress")
+	@Column(name = "gaddress")
 	private String address;
-	@Column(name = "gAddress2")
+	
+	@Column(name = "gaddress2")
 	private String addressTwo;
-	@Column(name = "gCity")
+	
+	@Column(name = "gcity")
 	private String city;
-	@Column(name = "gState")
+	@Column(name = "gstate")
 	private String state;
-	@Column(name = "gZipCode")
+	@Column(name = "gzipcode")
 	private String zipCode;
-	@Column(name = "gCounty")
+	@Column(name = "gcounty")
 	private String county;
-	@Column(name = "gHomePhoneNumber")
+	@Column(name = "ghomephonenumber")
 	private String homePhoneNumber;
-	@Column(name = "gCellularNumber")
+	@Column(name = "gcellularnumber")
 	private String cellularNumber;
-	@Column(name = "gGender")
+	@Column(name = "ggender")
 	private String gender;
 	
-	@NotBlank(message = "guest-3") @Email(message = "guest-4")
-	@Column(name = "gEmailAddress")
+	@NotBlank(message = "guest-3") @Email(message = "guest-4") 
+	@Column(name = "gemailaddress", unique = true)
 	private String email;
 
 }

@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -35,15 +37,18 @@ public class Staff implements Serializable {
 	@Column(name = "sStaffID")
 	private Long id;
 	
+	@NotBlank(message = "staff-1")
 	@Column(name = "sFirstName")
 	private String firstName;
+	
+	@NotBlank(message = "staff-2")
 	@Column(name = "sLastName")
 	private String lastName;
 	
 	@ManyToOne
 	@JoinColumn(name = "sPositionID")
-	
 	private Position position;
+	
 	@Column(name = "sAddress")
 	private String address;
 	@Column(name = "sAddress2")
@@ -60,8 +65,11 @@ public class Staff implements Serializable {
 	private String homePhoneNumber;
 	@Column(name = "sCellularNumber")
 	private String cellularNumber;
+	
 	@Column(name = "sGender")
 	private String gender;
+	
+	@Email(message = "staff-3")
 	@Column(name = "sEmailAddress")
 	private String email;
 
